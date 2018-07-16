@@ -1,4 +1,4 @@
-VERSION >= v"0.4.0" && __precompile__()
+__precompile__()
 module Homebrew
 
 import Base: show
@@ -9,7 +9,7 @@ using Compat; import Compat.String
 const brew_prefix = abspath(joinpath(dirname(@__FILE__),"..","deps", "usr"))
 const brew_exe = joinpath(brew_prefix,"bin","brew")
 
-const DL_LOAD_PATH = VERSION >= v"0.4.0" ? Libdl.DL_LOAD_PATH : Base.DL_LOAD_PATH
+const DL_LOAD_PATH = Libdl.DL_LOAD_PATH
 
 # Types and show() overrides, etc..
 include("types.jl")
